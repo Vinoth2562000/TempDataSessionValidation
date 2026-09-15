@@ -1,0 +1,10 @@
+<div class="card card-body">
+    <strong>TempData reader B</strong>
+    <code>validation-temp-b</code>
+    <span data-key="validation-temp-b">@(Value ?? "<null>")</span>
+</div>
+
+@code {
+    [SupplyParameterFromTempData(Name = "validation-temp-b")]
+    public string? Value { get; set; }
+}

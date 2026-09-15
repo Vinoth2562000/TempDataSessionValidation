@@ -1,0 +1,22 @@
+@page "/case-reader"
+
+<PageTitle>Case-only key comparison</PageTitle>
+
+<h1>Case-only key comparison</h1>
+<p>The seeded explicit keys use lowercase. These readers request the same text in uppercase.</p>
+
+<ValidationValueTable Rows="Rows" />
+
+@code {
+    [SupplyParameterFromTempData(Name = "VALIDATION-TEMP-EXPLICIT")]
+    public string? UppercaseTempKey { get; set; }
+
+    [SupplyParameterFromSession(Name = "VALIDATION-SESSION-EXPLICIT")]
+    public string? UppercaseSessionKey { get; set; }
+
+    private IReadOnlyList<ValidationValueTable.ValidationValueRow> Rows =>
+    [
+        new("TempData", nameof(UppercaseTempKey), "VALIDATION-TEMP-EXPLICIT", UppercaseTempKey),
+        new("Session", nameof(UppercaseSessionKey), "VALIDATION-SESSION-EXPLICIT", UppercaseSessionKey)
+    ];
+}

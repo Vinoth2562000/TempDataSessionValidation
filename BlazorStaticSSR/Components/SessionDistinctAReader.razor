@@ -1,0 +1,10 @@
+<div class="card card-body">
+    <strong>Session reader A</strong>
+    <code>validation-session-a</code>
+    <span data-key="validation-session-a">@(Value ?? "<null>")</span>
+</div>
+
+@code {
+    [SupplyParameterFromSession(Name = "validation-session-a")]
+    public string? Value { get; set; }
+}

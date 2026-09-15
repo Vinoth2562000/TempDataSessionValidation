@@ -1,0 +1,29 @@
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">State validation</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3"><NavLink class="nav-link" href="set-values">Set fresh values</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="display-values">Display values</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="passthrough">Pass-through</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="alternate-reader">Alternate reader</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="case-reader">Case-only reader</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="storage-state">Storage state</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="ordinary-tempdata-read">Ordinary TempData read</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="duplicate-tempdata">Duplicate TempData</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="duplicate-session">Duplicate session</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="distinct-readers">Distinct readers</NavLink></div>
+        <div class="nav-item px-3"><NavLink class="nav-link" href="clear-values">Assign null</NavLink></div>
+    </nav>
+</div>

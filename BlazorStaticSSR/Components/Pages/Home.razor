@@ -1,0 +1,26 @@
+@page "/"
+
+<PageTitle>TempData and session validation</PageTitle>
+
+<h1>TempData and session parameter validation</h1>
+
+<p class="lead">
+    Static SSR reproduction for
+    <a href="https://github.com/dotnet/aspnetcore/issues/69139" target="_blank">dotnet/aspnetcore#69139</a>.
+</p>
+
+<div class="alert alert-info">
+    Every navigation is a full HTTP request. Values shown as <code>&lt;null&gt;</code> are absent or null.
+    Use <strong>Storage state</strong> to distinguish key absence from a stored null.
+</div>
+
+<h2>Recommended recording sequence</h2>
+<ol>
+    <li>Open <a href="set-values">Set fresh values</a> and note the unique seed.</li>
+    <li>Open <a href="display-values">Display values</a> three times without reseeding.</li>
+    <li>Reseed, visit <a href="passthrough">Pass-through</a>, then display again.</li>
+    <li>Reseed and test the <a href="alternate-reader">alternate property names</a> and <a href="case-reader">case-only keys</a>.</li>
+    <li>Capture the exceptions from the TempData and session duplicate-key pages.</li>
+    <li>Verify the <a href="distinct-readers">repaired distinct-key page</a>.</li>
+    <li>Reseed, <a href="clear-values">assign null</a>, and inspect storage state.</li>
+</ol>

@@ -1,0 +1,40 @@
+@page "/clear-values"
+
+<PageTitle>Assign null</PageTitle>
+
+<h1>Assign null</h1>
+<p>Each property was supplied from storage and then explicitly assigned <code>null</code> during this request.</p>
+
+<ValidationValueTable Rows="Rows" />
+
+<a class="btn btn-primary" href="storage-state">Inspect key presence on next request</a>
+
+@code {
+    [SupplyParameterFromTempData(Name = "validation-temp-explicit")]
+    public string? TempExplicit { get; set; }
+
+    [SupplyParameterFromTempData]
+    public string? TempDefault { get; set; }
+
+    [SupplyParameterFromSession(Name = "validation-session-explicit")]
+    public string? SessionExplicit { get; set; }
+
+    [SupplyParameterFromSession]
+    public string? SessionDefault { get; set; }
+
+    private IReadOnlyList<ValidationValueTable.ValidationValueRow> Rows =>
+    [
+        new("TempData", nameof(TempExplicit), "validation-temp-explicit", TempExplicit),
+        new("TempData", nameof(TempDefault), nameof(TempDefault), TempDefault),
+        new("Session", nameof(SessionExplicit), "validation-session-explicit", SessionExplicit),
+        new("Session", nameof(SessionDefault), nameof(SessionDefault), SessionDefault)
+    ];
+
+    protected override void OnInitialized()
+    {
+        TempExplicit = null;
+        TempDefault = null;
+        SessionExplicit = null;
+        SessionDefault = null;
+    }
+}

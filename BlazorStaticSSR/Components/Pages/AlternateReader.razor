@@ -1,0 +1,30 @@
+@page "/alternate-reader"
+
+<PageTitle>Alternate property names</PageTitle>
+
+<h1>Same keys, different property names</h1>
+<p>Each property has a different CLR name but explicitly requests the original storage key.</p>
+
+<ValidationValueTable Rows="Rows" />
+
+@code {
+    [SupplyParameterFromTempData(Name = "validation-temp-explicit")]
+    public string? DifferentlyNamedTemp { get; set; }
+
+    [SupplyParameterFromTempData(Name = "TempDefault")]
+    public string? DifferentlyNamedDefaultTemp { get; set; }
+
+    [SupplyParameterFromSession(Name = "validation-session-explicit")]
+    public string? DifferentlyNamedSession { get; set; }
+
+    [SupplyParameterFromSession(Name = "SessionDefault")]
+    public string? DifferentlyNamedDefaultSession { get; set; }
+
+    private IReadOnlyList<ValidationValueTable.ValidationValueRow> Rows =>
+    [
+        new("TempData", nameof(DifferentlyNamedTemp), "validation-temp-explicit", DifferentlyNamedTemp),
+        new("TempData", nameof(DifferentlyNamedDefaultTemp), "TempDefault", DifferentlyNamedDefaultTemp),
+        new("Session", nameof(DifferentlyNamedSession), "validation-session-explicit", DifferentlyNamedSession),
+        new("Session", nameof(DifferentlyNamedDefaultSession), "SessionDefault", DifferentlyNamedDefaultSession)
+    ];
+}

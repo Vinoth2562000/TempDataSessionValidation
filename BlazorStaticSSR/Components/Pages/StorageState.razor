@@ -1,0 +1,55 @@
+@page "/storage-state"
+
+<PageTitle>Raw storage state</PageTitle>
+
+<h1>Raw storage state</h1>
+<p>This page has no attributed properties. TempData uses <code>Peek</code> so diagnostics don't consume it.</p>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr><th>Store</th><th>Key</th><th>Present?</th><th>Raw value</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Rows)
+        {
+            <tr>
+                <td>@row.Store</td>
+                <td><code>@row.Key</code></td>
+                <td data-presence-key="@row.Key">@row.Present</td>
+                <td>@(row.Value ?? "<null>")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    [CascadingParameter]
+    private ITempData TempData { get; set; } = default!;
+
+    private IReadOnlyList<StorageRow> Rows { get; set; } = [];
+
+    protected override void OnInitialized()
+    {
+        Rows =
+        [
+            TempDataRow("validation-temp-explicit"),
+            TempDataRow("TempDefault"),
+            SessionRow("validation-session-explicit", "validation-session-explicit"),
+            SessionRow("SessionDefault", "sessiondefault")
+        ];
+    }
+
+    private StorageRow TempDataRow(string key) =>
+        new StorageRow("TempData", key, TempData.ContainsKey(key), TempData.Peek(key)?.ToString());
+
+    private StorageRow SessionRow(string displayKey, string normalizedKey)
+    {
+        var value = HttpContext.Session.Get(normalizedKey);
+        return new("Session", displayKey, value is not null, value is null ? null : Convert.ToBase64String(value));
+    }
+
+    private sealed record StorageRow(string Store, string Key, bool Present, string? Value);
+}

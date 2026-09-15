@@ -1,0 +1,13 @@
+@page "/distinct-readers"
+
+<PageTitle>Corrected distinct keys</PageTitle>
+
+<h1>Corrected distinct keys</h1>
+<p>After replacing duplicate subscriptions with distinct keys, every component should independently receive its seeded value.</p>
+
+<div class="row g-3">
+    <div class="col-md-6"><TempDataDistinctAReader /></div>
+    <div class="col-md-6"><TempDataDistinctBReader /></div>
+    <div class="col-md-6"><SessionDistinctAReader /></div>
+    <div class="col-md-6"><SessionDistinctBReader /></div>
+</div>

@@ -1,0 +1,27 @@
+@page "/ordinary-tempdata-read"
+
+<PageTitle>Ordinary TempData read</PageTitle>
+
+<h1>Ordinary TempData read</h1>
+<p>This page performs an ordinary indexed <code>ITempDataDictionary</code> read instead of using the component attribute.</p>
+
+<dl>
+    <dt>Key</dt>
+    <dd><code>validation-temp-explicit</code></dd>
+    <dt>Read value</dt>
+    <dd id="ordinary-temp-value">@(Value ?? "<null>")</dd>
+</dl>
+
+<a class="btn btn-primary" href="storage-state">Inspect state after ordinary read</a>
+
+@code {
+    [CascadingParameter]
+    private ITempData TempData { get; set; } = default!;
+
+    private string? Value { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Value = TempData.Get("validation-temp-explicit")?.ToString();
+    }
+}

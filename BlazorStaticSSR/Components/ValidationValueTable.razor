@@ -1,0 +1,32 @@
+<table class="table table-bordered table-sm align-middle">
+    <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Declared property</th>
+            <th>Storage key</th>
+            <th>Visible value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Rows)
+        {
+            <tr>
+                <td><code>@row.Attribute</code></td>
+                <td><code>@row.Property</code></td>
+                <td><code>@row.Key</code></td>
+                <td class="value-cell" data-key="@row.Key">@(row.Value ?? "<null>")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter, EditorRequired]
+    public IReadOnlyList<ValidationValueRow> Rows { get; set; } = [];
+
+    public sealed record ValidationValueRow(
+        string Attribute,
+        string Property,
+        string Key,
+        string? Value);
+}
