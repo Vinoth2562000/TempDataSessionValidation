@@ -1,0 +1,5 @@
+NavigationEnhancement.ts:216  GET http://localhost:5274/duplicate-session 500 (Internal Server Error)
+performEnhancedPageLoad @ NavigationEnhancement.ts:216
+(anonymous) @ NavigationEnhancement.ts:110
+handleClickForNavigationInterception @ NavigationUtils.ts:37
+onDocumentClick @ NavigationEnhancement.ts:100
