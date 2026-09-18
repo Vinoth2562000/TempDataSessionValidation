@@ -29,6 +29,34 @@ Use the same browser tab while testing. Opening a new private window, clearing c
 
 The **Set fresh values** page generates a unique timestamp and short GUID. This seed is included in every value, so it is easy to confirm that a value shown on a later request belongs to the same test run.
 
+## Build report
+
+This repository was built and validated using the .NET 11 RC1 SDK. Captured build/run outputs from the validation machine are included below to reproduce the environment used during testing (run at 2026-09-17):
+
+```text
+.NET SDK:
+ Version:           11.0.100-rc.1.26425.128
+ Commit:            3551975be0
+
+Host:
+  Version:      11.0.0-rc.1.26425.128
+
+--- dotnet restore ---
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+--- dotnet build ---
+  BlazorStaticSSR -> D:\Validation\TempDataSessionValidation\BlazorStaticSSR\bin\Debug\net11.0\BlazorStaticSSR.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+```
+
+Include this output when submitting the validation evidence to make the SDK and build results explicit.
+
+
+
 ## Pages in the sample
 
 | Page | Purpose |

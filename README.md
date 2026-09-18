@@ -29,6 +29,52 @@ The sample was validated with .NET SDK `11.0.100-rc.1.26425.128`.
 
 ## Run the sample
 
+Open:
+
+```powershell
+cd BlazorStaticSSR
+dotnet run --launch-profile http
+```
+
+Open:
+
+```text
+http://localhost:5274
+```
+
+Use the same browser tab during a scenario so that the session cookie is retained. Start each independent scenario from **Set fresh values** and note the generated seed.
+
+## Build report
+
+The sample was built and tested on the validation machine using .NET SDK 11 RC1. Captured output from the validation run is shown below (run at 2026-09-17):
+
+```text
+.NET SDK:
+ Version:           11.0.100-rc.1.26425.128
+ Commit:            3551975be0
+
+Host:
+  Version:      11.0.0-rc.1.26425.128
+
+global.json file:
+  D:\Validation\TempDataSessionValidation\BlazorStaticSSR\global.json
+
+--- dotnet restore ---
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+--- dotnet build ---
+  BlazorStaticSSR -> D:\Validation\TempDataSessionValidation\BlazorStaticSSR\bin\Debug\net11.0\BlazorStaticSSR.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+```
+
+Include these outputs in your submission to the review to prove the exact SDK and a successful build with the tested RC1 SDK.
+
+## Scenarios covered
+
 From the repository root:
 
 ```powershell
