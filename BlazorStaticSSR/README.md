@@ -53,7 +53,10 @@ Build succeeded.
     0 Error(s)
 ```
 
-Include this output when submitting the validation evidence to make the SDK and build results explicit.
+The complete raw output from a fresh `dotnet --info`, `dotnet restore`, and
+`dotnet build --no-restore` run is available in
+[BuildEvidence-RC1.txt](../Evidence/BuildEvidence-RC1.txt). The captured build
+completed successfully with `0 Warning(s)` and `0 Error(s)`.
 
 
 
@@ -137,6 +140,10 @@ InvalidOperationException: A callback is already registered for the session key 
 ```
 
 These failures are expected and don't stop the application.
+
+The raw ASP.NET Core server output for both failures, including the verbatim
+exception messages and complete stack traces, is available in
+[DuplicateKeyExceptions-server.log](../Evidence/DuplicateKeyExceptions-server.log).
 
 ### 7. Correct the duplicate keys
 

@@ -71,7 +71,10 @@ Build succeeded.
     0 Error(s)
 ```
 
-Include these outputs in your submission to the review to prove the exact SDK and a successful build with the tested RC1 SDK.
+The complete raw output from a fresh `dotnet --info`, `dotnet restore`, and
+`dotnet build --no-restore` run is available in
+[BuildEvidence-RC1.txt](Evidence/BuildEvidence-RC1.txt). The captured build
+completed successfully with `0 Warning(s)` and `0 Error(s)`.
 
 ## Scenarios covered
 
@@ -109,6 +112,7 @@ The [Evidence](Evidence/) folder contains the validation report and recordings.
 ### Report
 
 - [TempData and Session Key Lifetime Validation Report](Evidence/TempDataAndSession_KeyLifetimeValidationReport.docx)
+- [Duplicate-key server exceptions and stack traces](Evidence/DuplicateKeyExceptions-server.log)
 
 ### Static SSR recordings
 
