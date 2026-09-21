@@ -1,0 +1,98 @@
+﻿===== dotnet --info =====
+.NET SDK:
+ Version:           11.0.100-rc.1.26425.128
+ Commit:            3551975be0
+ Workload version:  11.0.100-manifests.a6e318ce
+ MSBuild version:   18.11.0-1.26425.128+3551975be
+
+Runtime Environment:
+ OS Name:     Windows
+ OS Version:  10.0.26200
+ OS Platform: Windows
+ RID:         win-x64
+ Base Path:   C:\Program Files\dotnet\sdk\11.0.100-rc.1.26425.128
+
+.NET workloads installed:
+ [wasm-tools]
+   Installation Source: VS 18.10.12210.168
+   Manifest Version:    11.0.100-rc.1.26425.128/11.0.100-rc.1
+   Manifest Path:       C:\Program Files\dotnet\sdk-manifests\11.0.100-rc.1\microsoft.net.workload.mono.toolchain.current\11.0.100-rc.1.26425.128\WorkloadManifest.json
+   Install Type:              Msi
+
+ [wasm-tools-net8]
+   Installation Source: VS 18.10.12210.168
+   Manifest Version:    11.0.100-rc.1.26425.128/11.0.100-rc.1
+   Manifest Path:       C:\Program Files\dotnet\sdk-manifests\11.0.100-rc.1\microsoft.net.workload.mono.toolchain.net8\11.0.100-rc.1.26425.128\WorkloadManifest.json
+   Install Type:              Msi
+
+ [wasm-tools-net9]
+   Installation Source: VS 18.10.12210.168
+   Manifest Version:    11.0.100-rc.1.26425.128/11.0.100-rc.1
+   Manifest Path:       C:\Program Files\dotnet\sdk-manifests\11.0.100-rc.1\microsoft.net.workload.mono.toolchain.net9\11.0.100-rc.1.26425.128\WorkloadManifest.json
+   Install Type:              Msi
+
+Configured to use workload sets when installing new manifests.
+No workload sets are installed. Run "dotnet workload restore" to install a workload set.
+
+Host:
+  Version:      11.0.0-rc.1.26425.128
+  Architecture: x64
+  Commit:       3551975be0
+
+.NET SDKs installed:
+  7.0.410 [C:\Program Files\dotnet\sdk]
+  10.0.401 [C:\Program Files\dotnet\sdk]
+  11.0.100-rc.1.26425.128 [C:\Program Files\dotnet\sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.All 2.1.30 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
+  Microsoft.AspNetCore.App 2.1.30 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 3.1.32 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 8.0.31 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 9.0.20 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 11.0.0-rc.1.26425.128 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 2.1.30 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 3.1.32 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 8.0.31 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 9.0.20 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.NETCore.App 11.0.0-rc.1.26425.128 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
+  Microsoft.WindowsDesktop.App 3.1.32 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+  Microsoft.WindowsDesktop.App 7.0.20 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+  Microsoft.WindowsDesktop.App 8.0.31 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+  Microsoft.WindowsDesktop.App 9.0.20 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+  Microsoft.WindowsDesktop.App 10.0.12 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+  Microsoft.WindowsDesktop.App 11.0.0-rc.1.26425.128 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]
+
+Other architectures found:
+  x86   [C:\Program Files (x86)\dotnet]
+    registered at [HKLM\SOFTWARE\dotnet\Setup\InstalledVersions\x86\InstallLocation]
+
+Environment variables:
+  Not set
+
+global.json file:
+  D:\Validation\TempDataSessionValidation\BlazorStaticSSR\global.json
+
+Learn more:
+  https://aka.ms/dotnet/info
+
+Download .NET:
+  https://aka.ms/dotnet/download
+
+===== dotnet restore =====
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+
+===== dotnet build --no-restore =====
+C:\Program Files\dotnet\sdk\11.0.100-rc.1.26425.128\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(385,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [D:\Validation\TempDataSessionValidation\BlazorStaticSSR\BlazorStaticSSR.csproj]
+  BlazorStaticSSR -> D:\Validation\TempDataSessionValidation\BlazorStaticSSR\bin\Debug\net11.0\BlazorStaticSSR.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:07.14
